@@ -1,4 +1,6 @@
 package com.zipcodewilmington.singlylinkedlist;
+import org.junit.AfterClass;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.Assert;
 /**
@@ -31,4 +33,43 @@ public class SinglyLinkedListTest {
         Assert.assertEquals(expectedListSize, actualListSize);
     }
 
+    @Test
+    public void linkedListContains() {
+        SinglyLinkedList list = new SinglyLinkedList();
+
+        list.add(1);
+        list.add(2);
+        list.add(5);
+
+        boolean actualItemInLinkedList = list.contains(5);
+        Assert.assertTrue(actualItemInLinkedList);
+    }
+
+    @Test
+    public void linkedListFindTest() {
+        SinglyLinkedList list = new SinglyLinkedList();
+
+        list.add(1);
+        list.add(2);
+        list.add(3);
+
+        int expectedIndexInLinkedList = 2;
+        int actualIndexInLinkedList = list.find(3);
+
+        Assert.assertEquals(expectedIndexInLinkedList, actualIndexInLinkedList);
+    }
+
+    @Test
+    public void linkedListGetTest() {
+        SinglyLinkedList list = new SinglyLinkedList();
+
+        list.add(1);
+        list.add(2);
+        list.add(3);
+
+        Object expectedItemAtIndexOfLinkedList = 3;
+        Object actualItemAtIndexOfLinkedList = list.get(2);
+
+        Assert.assertEquals(expectedItemAtIndexOfLinkedList, actualItemAtIndexOfLinkedList);
+    }
 }

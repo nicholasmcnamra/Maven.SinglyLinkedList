@@ -4,7 +4,7 @@ import java.util.Iterator;
 /**
  * Created by leon on 1/10/18.
  */
-public class SinglyLinkedList<T> implements Iterable{
+public class SinglyLinkedList<T> implements Iterable {
 
     public class Node {
         T data;
@@ -84,6 +84,52 @@ public class SinglyLinkedList<T> implements Iterable{
             }
         } catch (NullPointerException e) {
             System.out.println("NullPointerException caught");
+        }
+        return result;
+    }
+
+    public boolean contains(T item) {
+        if (isEmpty()) {
+            throw new IllegalStateException("List is empty. Nothing to check.");
+        }
+        boolean result = false;
+        Node current = first;
+        while (current.next != null || current == last) {
+            if (current.data.equals(item)) {
+                result = true;
+                break;
+            }
+            else {
+                current = current.next;
+            }
+        }
+        return result;
+    }
+
+    public int find(T item) {
+        int result = -1;
+        Node current = first;
+        while (current.next != null || current == last) {
+            if (current.data.equals(item)) {
+                result++;
+                break;
+            } else {
+                result++;
+                current = current.next;
+            }
+        }
+        return result;
+    }
+
+    public T get(int index) {
+        T result = null;
+        Node current = first;
+        for (int i = 0; i < N; i++) {
+            if (i == index) {
+                result = current.data;
+            } else {
+                current = current.next;
+            }
         }
         return result;
     }
