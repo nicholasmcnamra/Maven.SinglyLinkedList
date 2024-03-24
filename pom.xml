@@ -8,5 +8,13 @@
     <artifactId>singlylinkedlist</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <juint.version>5.4.0</juint.version>
+    </properties>
+    <dependencies>
+
+    </dependencies>
 
 </project>
