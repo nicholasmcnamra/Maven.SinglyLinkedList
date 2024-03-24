@@ -72,4 +72,18 @@ public class SinglyLinkedListTest {
 
         Assert.assertEquals(expectedItemAtIndexOfLinkedList, actualItemAtIndexOfLinkedList);
     }
+
+    @Test
+    public void linkedListCopyTest() {
+        SinglyLinkedList list = new SinglyLinkedList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+
+
+        Object expectedSizeOfLinkedList = 3;
+        Object actualSizeOfLinkedList = list.copy().size();
+
+        Assert.assertEquals(expectedSizeOfLinkedList, actualSizeOfLinkedList);
+    }
 }

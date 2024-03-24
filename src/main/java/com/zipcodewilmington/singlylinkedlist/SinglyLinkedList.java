@@ -134,6 +134,21 @@ public class SinglyLinkedList<T> implements Iterable {
         return result;
     }
 
+    public SinglyLinkedList<T> copy() {
+        SinglyLinkedList<T> newList  = new SinglyLinkedList<>();
+
+        Node current = first;
+        while (current != null || current == last) {
+            newList.add(current.data);
+            current = current.next;
+        }
+
+        return newList;
+    }
+
+
+    
+
     @Override
     public Iterator iterator() {
         return null;
