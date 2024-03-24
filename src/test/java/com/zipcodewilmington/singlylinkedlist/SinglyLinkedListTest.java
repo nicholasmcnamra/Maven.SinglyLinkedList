@@ -86,4 +86,19 @@ public class SinglyLinkedListTest {
 
         Assert.assertEquals(expectedSizeOfLinkedList, actualSizeOfLinkedList);
     }
+
+    @Test
+    public void linkedListBubbleSortTest() {
+        SinglyLinkedList list = new SinglyLinkedList();
+
+        list.add(3);
+        list.add(2);
+        list.add(1);
+
+        list.intSort();
+        Object expectedValueAtIndex = 1;
+        Object actualValueAtIndex = list.get(0);
+
+        Assert.assertEquals(expectedValueAtIndex, actualValueAtIndex);
+    }
 }
